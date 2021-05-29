@@ -1,1 +1,3 @@
-aaa
+1. argv로 입력 받기
+2. stack 구현
+3. sort 하기
