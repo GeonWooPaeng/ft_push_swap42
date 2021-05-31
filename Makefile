@@ -1,14 +1,16 @@
 CC = gcc
 CFLAGS = -Wextra -Werror -Wall
-CFLAGS += -g -fsanitize=address
+CFLAGS += -g
 NAME = push_swap
 
 DIR_H = ./includes/
 DIR_S = ./srcs/
 DIR_O = ./
 
-SRC = main.c
-
+SRC =	ft_lst.c	\
+		ft_stack.c	\
+		ft_utils.c	\
+		main.c		\
 
 SRCS = $(addprefix $(DIR_S),$(SRC))
 

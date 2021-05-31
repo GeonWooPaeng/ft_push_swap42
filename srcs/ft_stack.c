@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 18:45:05 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/05/31 16:11:53 by gpaeng           ###   ########.fr       */
+/*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
+/*   Updated: 2021/05/31 15:03:24 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-#include <stdio.h>
 
-int main(int argc, char *argv[])
+void	ft_stack_init(t_stack *stack)
 {
+	stack->data = 0;
+	stack->next = NULL;
+}
 
-	t_stack *a;
-	int		tmp;
-	int		argc_idx;
-	
-	argc_idx = argc - 1;
-	ft_stack_init(&a);
-	while (argc_idx > 0)
-	{
-		//숫자가 아닌것 return 
-		tmp = ft_atoi(argv[argc_idx]);
-		ft_push(a, tmp);
-		argc_idx--;
-	}
-	ft_print_lst(&a);
-	ft_free_lst(&a);
+int		ft_empty(t_stack *head)
+{
+	if (head == NULL)
+		return (1);
 	return (0);
+}
+
+void	ft_push(t_stack *stack, int data)
+{
+	t_stack *new_node = (t_stack *)malloc(sizeof(t_stack));
+	new_node->data = data;
+	new_node->next = stack->next;
+	stack->next = new_node;
 }
