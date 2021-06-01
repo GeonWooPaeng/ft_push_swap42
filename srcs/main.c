@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 15:43:08 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 16:07:27 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 		idx--;
 	}
 	ft_check_arr(int_arr);
-	a->data = int_arr[0];
 	ft_make_a(a, int_arr, argc - 1);
 	ft_print_lst(a);
 	ft_free_lst(a);
