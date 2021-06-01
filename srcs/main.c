@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 14:01:48 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 15:01:01 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int main(int argc, char *argv[])
 {
-
 	t_stack 	*a;
 	long long	*int_arr;
 	int			idx;
@@ -38,13 +37,8 @@ int main(int argc, char *argv[])
 		idx--;
 	}
 	ft_check_arr(int_arr);
-	idx = 0;
-	while (idx < argc - 1)
-	{
-		printf("%lld\n", int_arr[idx]);
-		idx++;
-	}
-	// ft_print_lst(a);
+	ft_make_a(a, int_arr, argc - 1);
+	ft_print_lst(a);
 	ft_free_lst(a);
 	return (0);
 }
