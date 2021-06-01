@@ -6,18 +6,15 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:46 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 16:06:40 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 17:32:11 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void sa(t_stack *a)
+void    ft_swap(int *a, int *b)
 {
-}
+    int *tmp;
 
-void sb(t_stack *b)
-{
-}
-
-void ss(t_stack *a, t_stack *b)
-{
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
 }

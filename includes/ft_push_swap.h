@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 15:43:06 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 16:58:17 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct	s_stack
 {
+	struct s_stack *prev;
 	int	data;
 	struct s_stack *next;
 }	t_stack;
@@ -37,6 +38,6 @@ void	ft_push(t_stack *stack, int data);
 //ft_lst.c
 void	ft_print_lst(t_stack *stack);
 void	ft_free_lst(t_stack *stack);
-void	ft_make_a(t_stack *a, long long *arr, int cnt);
+void	ft_make_arr(t_stack *stack, long long *arr, int cnt);
 
 #endif

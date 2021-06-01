@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 16:08:24 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 16:56:32 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_free_lst(t_stack *stack)
 	}
 }
 
-void	ft_make_a(t_stack *a, long long *arr, int cnt)
+void	ft_make_arr(t_stack *stack, long long *arr, int cnt)
 {
 	int idx;
 
@@ -42,8 +42,9 @@ void	ft_make_a(t_stack *a, long long *arr, int cnt)
 	{
 		t_stack *new_node = (t_stack *)malloc(sizeof(t_stack));
 		new_node->data = arr[idx];
-		new_node->next = a->next;
-		a->next = new_node;
+		new_node->next = stack->next;
+		new_node->prev = stack;
+		stack->next = new_node;
 		idx--;
 	}
 }
