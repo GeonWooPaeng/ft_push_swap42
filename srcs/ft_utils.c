@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:55:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/05/31 15:08:25 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 14:01:25 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int		ft_isspace(char c)
 	c == '\t' || c == '\v' || c == ' ');
 }
 
+int		ft_isalpha(char c)
+{
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+}
+
 int		ft_error(int ret)
 {
 	write(1, "[Error]\n", 8);
@@ -25,22 +30,29 @@ int		ft_error(int ret)
 	return (ret);
 }
 
-int     ft_check(char *str)
+int			ft_check_arr(long long *arr)
 {
-	int idx;
-
-	idx = 0;
-	while (str[idx])
+	int i;
+	int j;
+	
+	i = 0;
+	while (arr[i])
 	{
-		if (!(str[idx] > '0' && str[idx] < '9'))
-			return (-1);
+		j = i + 1;
+		while (arr[j])
+		{
+			if (arr[i] == arr[j])
+				ft_error(0);
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }
 
-int		ft_atoi(char *str)
+long long	ft_atoll(char *str)
 {
-	int result;
+	long long result;
 	int sign;
 
 	result = 0;
@@ -57,5 +69,7 @@ int		ft_atoi(char *str)
 		result = result * 10 + (*str - '0');
 		str++;
 	}
+	if (ft_isalpha(*str))
+		ft_error(0);
 	return (sign * result);
 }

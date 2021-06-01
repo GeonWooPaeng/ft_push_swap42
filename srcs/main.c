@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 18:45:05 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/05/31 16:11:53 by gpaeng           ###   ########.fr       */
+/*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
+/*   Updated: 2021/06/01 14:01:48 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,35 @@
 int main(int argc, char *argv[])
 {
 
-	t_stack *a;
-	int		tmp;
-	int		argc_idx;
+	t_stack 	*a;
+	long long	*int_arr;
+	int			idx;
+	long long	tmp;
 	
-	argc_idx = argc - 1;
-	ft_stack_init(&a);
-	while (argc_idx > 0)
+	idx = 0;
+	a = (t_stack *)malloc(sizeof(t_stack));
+	int_arr = (long long *)malloc(sizeof(long long) * (argc - 1));
+	while (idx < argc - 1)
+		int_arr[idx++] = 0;
+	ft_stack_init(a);
+	if (argc < 2) // 매개변수 check
+		ft_error(0);
+	while (idx > 0)
 	{
-		//숫자가 아닌것 return 
-		tmp = ft_atoi(argv[argc_idx]);
-		ft_push(a, tmp);
-		argc_idx--;
+		tmp = ft_atoll(argv[idx]); // 숫자 아닌 것 check
+		if (tmp > 2147483647 || tmp < -2147483648)
+			ft_error(0);
+		int_arr[idx - 1] = tmp;		
+		idx--;
 	}
-	ft_print_lst(&a);
-	ft_free_lst(&a);
+	ft_check_arr(int_arr);
+	idx = 0;
+	while (idx < argc - 1)
+	{
+		printf("%lld\n", int_arr[idx]);
+		idx++;
+	}
+	// ft_print_lst(a);
+	ft_free_lst(a);
 	return (0);
 }

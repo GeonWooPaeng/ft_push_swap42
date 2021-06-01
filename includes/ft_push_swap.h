@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/05/31 15:33:43 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 13:42:24 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ typedef struct	s_stack
 }	t_stack;
 
 //ft_utils.c
-int		ft_isspace(char c);
-int		ft_error(int ret);
-int     ft_check(char *str);
-int		ft_atoi(char *str);
+int			ft_isspace(char c);
+int			ft_error(int ret);
+int			ft_check_arr(long long *arr);
+long long	ft_atoll(char *str);
 
 //ft_stack.c
 void	ft_stack_init(t_stack *stack);
