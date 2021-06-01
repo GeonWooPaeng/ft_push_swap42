@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 15:02:07 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 15:43:05 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_lst(t_stack *stack)
 {
-	while (stack->next)
+	while (stack)
 	{
 		printf("%d\n",stack->data);
 		stack = stack->next;
@@ -37,10 +37,13 @@ void	ft_make_a(t_stack *a, long long *arr, int cnt)
 {
 	int idx;
 
-	idx = cnt;
-	while (idx > -1)
+	idx = cnt - 1;
+	while (idx > 0)
 	{
-		ft_push(a, arr[idx]);
+		t_stack *new_node = (t_stack *)malloc(sizeof(t_stack));
+		new_node->data = arr[idx];
+		new_node->next = a->next;
+		a->next = new_node;
 		idx--;
 	}
 }

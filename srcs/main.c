@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 15:01:01 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/01 15:43:08 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int main(int argc, char *argv[])
 	
 	idx = 0;
 	a = (t_stack *)malloc(sizeof(t_stack));
+	a->next = NULL;
 	int_arr = (long long *)malloc(sizeof(long long) * (argc - 1));
 	while (idx < argc - 1)
 		int_arr[idx++] = 0;
-	ft_stack_init(a);
 	if (argc < 2) // 매개변수 check
 		ft_error(0);
 	while (idx > 0)
@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 		idx--;
 	}
 	ft_check_arr(int_arr);
+	a->data = int_arr[0];
 	ft_make_a(a, int_arr, argc - 1);
 	ft_print_lst(a);
 	ft_free_lst(a);
