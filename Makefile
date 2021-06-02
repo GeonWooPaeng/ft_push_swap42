@@ -12,6 +12,7 @@ SRC =	ft_lst.c	\
 		ft_utils.c	\
 		ft_swap.c	\
 		ft_push.c	\
+		ft_rotate.c	\
 		main.c		\
 
 SRCS = $(addprefix $(DIR_S),$(SRC))

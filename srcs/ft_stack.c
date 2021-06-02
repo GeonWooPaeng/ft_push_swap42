@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/02 14:07:57 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/02 17:25:52 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,12 @@ t_stack	*ft_stack_init()
 	return (tmp);
 }
 
-int		ft_empty(t_stack *head)
-{
-	if (head == NULL)
-		return (1);
-	return (0);
-}
-
 void	ft_push(t_stack *head, int data)
 {//뒤에다 추가 해주는 식입니다.
 	t_stack *new_node;
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
-	
+
 	if (head->next == NULL)
 	{
 		new_node->data = data;
@@ -46,21 +39,20 @@ void	ft_push(t_stack *head, int data)
 	else
 	{
 		new_node->data = data;
-		new_node->prev = head;
-		head->next->prev = new_node;
 		new_node->next = head->next;
+		head->next->prev = new_node;
+		new_node->prev = head;
 		head->next = new_node;
 	}
 }
 
 int		ft_pop(t_stack *head)
-{
+{//관련된 것 고쳐야 합니다.
 	t_stack *del;
 	int		value;
 
 	del = head->next;
 	value = del->data;
-
 	head->next = del->next;
 	del->next->prev = head;
 	free(del);
