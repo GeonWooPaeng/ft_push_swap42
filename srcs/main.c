@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 16:58:07 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/02 14:08:31 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@
 int main(int argc, char *argv[])
 {
 	t_stack 	*a;
+	t_stack		*b;
 	long long	*int_arr;
 	long long	tmp;
 	int			idx;
 	
 	idx = 0;
-	a = (t_stack *)malloc(sizeof(t_stack));
-	ft_stack_init(a);
+	a = ft_stack_init();
+	b = ft_stack_init();
 	int_arr = (long long *)malloc(sizeof(long long) * (argc - 1));
 	while (idx < argc - 1)
 		int_arr[idx++] = 0;
@@ -38,6 +39,11 @@ int main(int argc, char *argv[])
 	}
 	ft_check_arr(int_arr);
 	ft_make_arr(a, int_arr, argc - 1);
+	ft_print_lst(a); //출력부분
+	pa(a,b);
+	printf("\n");
+	ft_print_lst(b); //출력부분
+	printf("\n");
 	ft_print_lst(a); //출력부분
 	ft_free_lst(a);
 	return (0);
