@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:28:20 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:50:50 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	long long	*int_arr;
 	long long	tmp;
 	int			idx;
-	
+
 	idx = 0;
 	a = ft_stack_init();
 	b = ft_stack_init();

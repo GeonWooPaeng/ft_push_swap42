@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:18:40 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:48:23 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*ft_stack_init(void)
 	return (tmp);
 }
 
-void	ft_push(t_stack *head, int data)
+void	ft_push_first(t_stack *head, int data)
 {//뒤에다 추가 해주는 식입니다.
 	t_stack *new_node;
 

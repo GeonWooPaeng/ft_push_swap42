@@ -2,12 +2,17 @@
 2. stack 구현
 3. sort 하기
 
-
-
 -------------------------
 
-check 부분
+< check 부분 >
 1. 숫자가 아닌 것
 2. 중복된 숫자
 3. 매개변수가 없는 경우
 4. MAXINT 보다 큰 경우
+
+< pa,pb 등 함수 구현 > 
+
+< sort 하기 >
+
+
+https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a

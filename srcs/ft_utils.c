@@ -6,24 +6,24 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:55:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/01 16:58:23 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:49:28 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-int		ft_isspace(char c)
+int			ft_isspace(char c)
 {
 	return (c == '\f' || c == '\n' || c == 'r' ||
 	c == '\t' || c == '\v' || c == ' ');
 }
 
-int		ft_isalpha(char c)
+int			ft_isalpha(char c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
-int		ft_error(int ret)
+int			ft_error(int ret)
 {
 	write(1, "[Error]\n", 8);
 	exit(ret);
@@ -34,7 +34,7 @@ int			ft_check_arr(long long *arr)
 {
 	int i;
 	int j;
-	
+
 	i = 0;
 	while (arr[i])
 	{
@@ -52,8 +52,8 @@ int			ft_check_arr(long long *arr)
 
 long long	ft_atoll(char *str)
 {
-	long long result;
-	int sign;
+	long long	result;
+	int			sign;
 
 	result = 0;
 	sign = 1;
@@ -64,7 +64,7 @@ long long	ft_atoll(char *str)
 		if (*str++ == '-')
 			sign *= -1;
 	}
-	while(*str > '0' && *str < '9')
+	while (*str > '0' && *str < '9')
 	{
 		result = result * 10 + (*str - '0');
 		str++;

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:30:47 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:41:41 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stack	*ft_find_last_lst(t_stack *stack);
 
 //ft_stack.c
 t_stack	*ft_stack_init(void);
-void	ft_push(t_stack *stack, int data);
+void	ft_push_first(t_stack *stack, int data);
 void	ft_pop(t_stack *head);
 void	ft_pop_last(t_stack *head);
 int		ft_size(t_stack *head);
@@ -49,7 +49,7 @@ void    sa(t_stack *a);
 void    sb(t_stack *b);
 void    ss(t_stack *a, t_stack *b);
 
-//ft_push.c
+//ft_push_first.c
 void    pa(t_stack *a, t_stack *b);
 void    pb(t_stack *a, t_stack *b);
 
