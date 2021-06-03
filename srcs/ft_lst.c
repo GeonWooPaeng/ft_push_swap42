@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/02 17:17:14 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:16:19 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ void	ft_print_lst(t_stack *stack)
 		printf("address next >>> %p\n", stack->next);
 		stack = stack->next;
 	}
+}
+
+t_stack	*ft_find_last_lst(t_stack *stack)
+{
+	if(!stack)
+		return (0);
+	while (stack->next)
+	{
+		stack = stack->next;
+	}
+	return (stack);
 }
 
 void	ft_free_lst(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 11:58:01 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:30:47 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,17 @@ int			ft_error(int ret);
 int			ft_check_arr(long long *arr);
 long long	ft_atoll(char *str);
 
+//ft_lst.c
+void	ft_print_lst(t_stack *stack);
+void	ft_free_lst(t_stack *stack);
+void	ft_make_arr(t_stack *stack, long long *arr, int cnt);
+t_stack	*ft_find_last_lst(t_stack *stack);
+
 //ft_stack.c
 t_stack	*ft_stack_init(void);
 void	ft_push(t_stack *stack, int data);
 void	ft_pop(t_stack *head);
+void	ft_pop_last(t_stack *head);
 int		ft_size(t_stack *head);
 
 //ft_swap.c
@@ -51,9 +58,9 @@ void    ra(t_stack *a);
 void    rb(t_stack *b);
 void    rr(t_stack *a, t_stack *b);
 
-//ft_lst.c
-void	ft_print_lst(t_stack *stack);
-void	ft_free_lst(t_stack *stack);
-void	ft_make_arr(t_stack *stack, long long *arr, int cnt);
+//ft_rrotate.c
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 #endif

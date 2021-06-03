@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:03:20 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:18:40 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,21 @@ void	ft_pop(t_stack *head)
 	else
 	{
 		head->next = del->next;
+		free(del);
+	}
+}
+
+void	ft_pop_last(t_stack *head)
+{
+	t_stack *del;
+
+	del = head->next;
+	if (del == NULL)
+		return ;
+	else
+	{
+		del = ft_find_last_lst(head);
+		del->prev->next = NULL;
 		free(del);
 	}
 }
