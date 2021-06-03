@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/02 15:08:52 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 11:58:01 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int			ft_check_arr(long long *arr);
 long long	ft_atoll(char *str);
 
 //ft_stack.c
-t_stack	*ft_stack_init();
+t_stack	*ft_stack_init(void);
 void	ft_push(t_stack *stack, int data);
-int		ft_pop(t_stack *head);
+void	ft_pop(t_stack *head);
 int		ft_size(t_stack *head);
 
 //ft_swap.c

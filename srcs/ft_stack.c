@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/02 17:25:52 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/03 12:03:20 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-t_stack	*ft_stack_init()
+t_stack	*ft_stack_init(void)
 {
 	t_stack	*tmp;
 
@@ -46,17 +46,18 @@ void	ft_push(t_stack *head, int data)
 	}
 }
 
-int		ft_pop(t_stack *head)
-{//관련된 것 고쳐야 합니다.
+void	ft_pop(t_stack *head)
+{
 	t_stack *del;
-	int		value;
 
 	del = head->next;
-	value = del->data;
-	head->next = del->next;
-	del->next->prev = head;
-	free(del);
-	return (value);
+	if (del == NULL)
+		return ;
+	else
+	{
+		head->next = del->next;
+		free(del);
+	}
 }
 
 int		ft_size(t_stack *head)
