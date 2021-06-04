@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:41:41 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/04 12:28:55 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ long long	ft_atoll(char *str);
 //ft_lst.c
 void	ft_print_lst(t_stack *stack);
 void	ft_free_lst(t_stack *stack);
-void	ft_make_arr(t_stack *stack, long long *arr, int cnt);
+void	ft_make_lst(t_stack *stack, long long *arr, int cnt);
 t_stack	*ft_find_last_lst(t_stack *stack);
 
 //ft_stack.c

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:55:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:49:28 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/04 13:32:43 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int			ft_isalpha(char c)
 
 int			ft_error(int ret)
 {
-	write(1, "[Error]\n", 8);
+	write(1, "Error\n", 6);
 	exit(ret);
 	return (ret);
 }

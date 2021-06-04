@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:50:31 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/04 12:28:39 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_free_lst(t_stack *stack)
 	}
 }
 
-void	ft_make_arr(t_stack *head, long long *arr, int cnt)
+void	ft_make_lst(t_stack *head, long long *arr, int cnt)
 {
 	int		idx;
 	t_stack	*new_node;
