@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 15:07:43 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:44:28 by gpaeng           ###   ########.fr       */
+/*   Created: 2021/06/01 15:07:37 by gpaeng            #+#    #+#             */
+/*   Updated: 2021/06/04 12:24:02 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_push_swap.h"
+#include "../../includes/ft_push_swap.h"
 
-void	pa(t_stack *a, t_stack *b)
+void	ra(t_stack *a)
 {
-	int	bsize;
-	int	bdata;
+	int adata;
 
-	bsize = ft_size(b);
-	if (bsize < 1)
-		return ;
-	bdata = b->next->data;
-	ft_pop(b);
-	ft_push_first(a, bdata);
-}
-
-void	pb(t_stack *a, t_stack *b)
-{
-	int	asize;
-	int	adata;
-
-	asize = ft_size(a);
-	if (asize < 1)
+	if (a->next == NULL)
 		return ;
 	adata = a->next->data;
 	ft_pop(a);
-	ft_push_first(b, adata);
+	ft_push_first(a, adata);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_stack *b)
+{
+	int bdata;
+
+	if (b->next == NULL)
+		return ;
+	bdata = b->next->data;
+	ft_pop(b);
+	ft_push_first(b, bdata);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	ra(a);
+	rb(b);
+	write(1, "rr\n", 3);
 }

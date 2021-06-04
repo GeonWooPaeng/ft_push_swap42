@@ -7,14 +7,14 @@ DIR_H = ./includes/
 DIR_S = ./srcs/
 DIR_O = ./
 
-SRC =	ft_lst.c		\
-		ft_stack.c		\
-		ft_utils.c		\
-		ft_swap.c		\
-		ft_push.c		\
-		ft_rotate.c		\
-		ft_rrotate.c	\
-		main.c			\
+SRC =	ft_lst.c					\
+		ft_stack.c					\
+		ft_utils.c					\
+		./function/ft_swap.c		\
+		./function/ft_push.c		\
+		./function/ft_rotate.c		\
+		./function/ft_rrotate.c		\
+		main.c						\
 
 SRCS = $(addprefix $(DIR_S),$(SRC))
 

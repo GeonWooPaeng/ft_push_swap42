@@ -6,11 +6,11 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:27 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:44:17 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/04 12:23:01 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_push_swap.h"
+#include "../../includes/ft_push_swap.h"
 
 void	rra(t_stack *a)
 {
@@ -21,6 +21,7 @@ void	rra(t_stack *a)
 	adata = last_a->data;
 	ft_pop_last(a);
 	ft_push_first(a, adata);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack *b)
@@ -32,10 +33,12 @@ void	rrb(t_stack *b)
 	bdata = last_b->data;
 	ft_pop_last(b);
 	ft_push_first(b, bdata);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack *a, t_stack *b)
 {
 	rra(a);
 	rrb(b);
+	write(1, "rrr\n", 4);
 }

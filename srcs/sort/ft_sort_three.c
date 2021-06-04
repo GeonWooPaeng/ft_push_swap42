@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate.c                                        :+:      :+:    :+:   */
+/*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 15:07:37 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/03 12:44:24 by gpaeng           ###   ########.fr       */
+/*   Created: 2021/06/04 12:19:05 by gpaeng            #+#    #+#             */
+/*   Updated: 2021/06/04 12:26:09 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_push_swap.h"
 
-void	ra(t_stack *a)
+#include "../../includes/ft_push_swap.h"
+
+void	ft_factor_three(t_stack *head)
 {
-	int adata;
+	t_stack	*top;
+	t_stack	*bot;
+	int		max_value;
+	int		min_value;
 
-	if (a->next == NULL)
-		return ;
-	adata = a->next->data;
-	ft_pop(a);
-	ft_push_first(a, adata);
-}
-
-void	rb(t_stack *b)
-{
-	int bdata;
-
-	if (b->next == NULL)
-		return ;
-	bdata = b->next->data;
-	ft_pop(b);
-	ft_push_first(b, bdata);
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	ra(a);
-	rb(b);
+	top = head->next;
+	bot = head->next->next->next;
+	max_value = ft_find_max(head);
+	min_value = ft_find_min(head);
+	if (top->next->data == max_value)
+		rra(head);
+	else if (top)
 }

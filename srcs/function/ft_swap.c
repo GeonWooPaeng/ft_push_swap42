@@ -6,11 +6,11 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:46 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/02 13:15:28 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/04 12:24:02 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_push_swap.h"
+#include "../../includes/ft_push_swap.h"
 
 void	ft_swap(int *a, int *b)
 {
@@ -32,6 +32,7 @@ void	sa(t_stack *a)
 	data = a->next->next->data;
 	a->next->next->data = a->next->data;
 	a->next->data = data;
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack *b)
@@ -45,10 +46,12 @@ void	sb(t_stack *b)
 	data = b->next->next->data;
 	b->next->next->data = b->next->data;
 	b->next->data = data;
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack *a, t_stack *b)
 {
 	sa(a);
 	sb(b);
+	write(1, "ss\n", 3);
 }
