@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/11 15:39:55 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 20:58:22 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct	s_stack
 	int	data;
 	struct s_stack *next;
 }	t_stack;
+
+typedef struct	s_cnt
+{
+	int	ra_cnt;
+	int	rb_cnt;
+	int	pa_cnt;
+	int	pb_cnt;
+}	t_cnt;
 
 //ft_utils.c
 int			ft_isspace(char c);

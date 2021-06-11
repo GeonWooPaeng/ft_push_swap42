@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 12:41:41 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/11 15:49:24 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 20:17:02 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	ft_factor_five(t_stack *a, t_stack *b)
 			pb(a, b);
 			pb_cnt += 1;
 		}
-		ra(a);
+		else
+			ra(a);
 	}
 	ft_factor_three(a);
 	ft_m_change(a, b, pb_cnt, max_value);
