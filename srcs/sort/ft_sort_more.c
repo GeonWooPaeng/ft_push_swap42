@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_merge.c                                    :+:      :+:    :+:   */
+/*   ft_sort_more.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/04 15:34:18 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 15:42:37 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../../includes/ft_push_swap.h"
 
-def A_to_B(범위의 크기r)
-	if r == 1:
+void	ft_a_b(t_stack *a, t_stack *b, int r)
+{
+	int	pivot;
+	int	idx;
+	int	ra_cnt;
+
+	if (r == 1)
 		return ;
-	스택A의 r개의 원소 중에서 "적절한" 피봇 선택
-	for r개의 원소에 대해
-		if (스택A의 top) > pivot:
-			ra()
+	pivot = ft_find_pivot();
+	idx = 0;
+	ra_cnt = 0;
+	while (idx < r)
+	{
+		if (a->next->data > pivot)
+		{
+			ra(a);
+			ra_cnt += 1;
+		}
 		else
+			pb(a, b);
+	}
+	idx = 0;
+	while (idx++ > ra_cnt)
+		rra(a);
+	ft_a_b(ra_cnt);
+
+}

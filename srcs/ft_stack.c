@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/04 14:34:33 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 13:42:25 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack	*ft_stack_init(void)
 }
 
 void	ft_push_first(t_stack *head, int data)
-{//뒤에다 추가 해주는 식입니다.
+{
 	t_stack *new_node;
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
@@ -43,6 +43,29 @@ void	ft_push_first(t_stack *head, int data)
 		head->next->prev = new_node;
 		new_node->prev = head;
 		head->next = new_node;
+	}
+}
+
+void	ft_push_last(t_stack *head, int data)
+{
+	t_stack *new_node;
+	t_stack *tmp_last;
+
+	new_node = (t_stack *)malloc(sizeof(t_stack));
+	tmp_last = ft_find_last_lst(head);
+	if (head->next == NULL)
+	{
+		new_node->data = data;
+		new_node->next = NULL;
+		new_node->prev = head;
+		head->next = new_node;
+	}
+	else
+	{
+		new_node->data = data;
+		new_node->next = NULL;
+		new_node->prev = tmp_last;
+		tmp_last->next = new_node;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/04 12:28:55 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 15:39:55 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,25 +42,36 @@ void	ft_push_first(t_stack *stack, int data);
 void	ft_pop(t_stack *head);
 void	ft_pop_last(t_stack *head);
 int		ft_size(t_stack *head);
+void	ft_push_last(t_stack *head, int data);
 
-//ft_swap.c
-void    ft_swap(int *a, int *b);
+//function/ft_swap.c
 void    sa(t_stack *a);
 void    sb(t_stack *b);
 void    ss(t_stack *a, t_stack *b);
 
-//ft_push_first.c
+//function/ft_push.c
 void    pa(t_stack *a, t_stack *b);
 void    pb(t_stack *a, t_stack *b);
 
-//ft_rotate.c
+//function/ft_rotate.c
 void    ra(t_stack *a);
 void    rb(t_stack *b);
 void    rr(t_stack *a, t_stack *b);
 
-//ft_rrotate.c
+//function/ft_rrotate.c
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
+
+//sort/ft_sort_utils.c
+int		ft_find_max(t_stack *head);
+int		ft_find_min(t_stack *head);
+
+//sort/ft_sort_three.c
+void	ft_factor_three(t_stack *head);
+
+//sort/ft_sort_five.c
+void	ft_factor_five(t_stack *a, t_stack *b);
+void	ft_m_change(t_stack *a, t_stack *b, int pb_cnt, int max_v);
 
 #endif

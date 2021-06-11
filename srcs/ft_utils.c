@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:55:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/04 13:32:43 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 13:21:24 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ long long	ft_atoll(char *str)
 		if (*str++ == '-')
 			sign *= -1;
 	}
-	while (*str > '0' && *str < '9')
+	while (*str >= '0' && *str <= '9')
 	{
 		result = result * 10 + (*str - '0');
 		str++;

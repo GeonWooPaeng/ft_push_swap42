@@ -14,6 +14,9 @@ SRC =	ft_lst.c					\
 		./function/ft_push.c		\
 		./function/ft_rotate.c		\
 		./function/ft_rrotate.c		\
+		./sort/ft_sort_utils.c		\
+		./sort/ft_sort_three.c		\
+		./sort/ft_sort_five.c		\
 		main.c						\
 
 SRCS = $(addprefix $(DIR_S),$(SRC))

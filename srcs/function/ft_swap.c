@@ -6,20 +6,11 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:46 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/04 12:24:02 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/11 13:30:59 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
-
-void	ft_swap(int *a, int *b)
-{
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
 
 void	sa(t_stack *a)
 {
