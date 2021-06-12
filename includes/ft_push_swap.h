@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/11 20:58:22 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/12 12:44:53 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,16 @@ void	ft_make_lst(t_stack *stack, long long *arr, int cnt);
 t_stack	*ft_find_last_lst(t_stack *stack);
 
 //ft_stack.c
-t_stack	*ft_stack_init(void);
 void	ft_push_first(t_stack *stack, int data);
 void	ft_pop(t_stack *head);
 void	ft_pop_last(t_stack *head);
 int		ft_size(t_stack *head);
 void	ft_push_last(t_stack *head, int data);
+
+//ft_init.c
+t_stack	*ft_stack_init(void);
+long long	*ft_init_arr(char **av, int ac);
+void		ft_init_cnt(t_cnt *st_cnt);
 
 //function/ft_swap.c
 void    sa(t_stack *a);
@@ -58,13 +62,13 @@ void    sb(t_stack *b);
 void    ss(t_stack *a, t_stack *b);
 
 //function/ft_push.c
-void    pa(t_stack *a, t_stack *b);
-void    pb(t_stack *a, t_stack *b);
+void    pa(t_stack *a, t_stack *b, t_cnt *st_cnt);
+void    pb(t_stack *a, t_stack *b, t_cnt *st_cnt);
 
 //function/ft_rotate.c
-void    ra(t_stack *a);
-void    rb(t_stack *b);
-void    rr(t_stack *a, t_stack *b);
+void    ra(t_stack *a, t_cnt *st_cnt);
+void    rb(t_stack *b, t_cnt *st_cnt);
+void    rr(t_stack *a, t_stack *b, t_cnt *st_cnt);
 
 //function/ft_rrotate.c
 void	rra(t_stack *a);
@@ -76,10 +80,15 @@ int		ft_find_max(t_stack *head);
 int		ft_find_min(t_stack *head);
 
 //sort/ft_sort_three.c
-void	ft_factor_three(t_stack *head);
+void	ft_factor_three(t_stack *head, t_cnt *st_cnt);
 
 //sort/ft_sort_five.c
-void	ft_factor_five(t_stack *a, t_stack *b);
-void	ft_m_change(t_stack *a, t_stack *b, int pb_cnt, int max_v);
+void	ft_factor_five(t_stack *a, t_stack *b, t_cnt *st_cnt);
+void	ft_m_change(t_stack *a, t_stack *b, t_cnt *st_cnt, int pb_cnt, int max_v);
+
+
+//sort/ft_sort_more.c
+void	ft_a_b(t_stack *a, t_stack *b, t_cnt *st_cnt, int cnt);
+void	ft_b_a(t_stack *a, t_stack *b, t_cnt *st_cnt, int cnt);
 
 #endif

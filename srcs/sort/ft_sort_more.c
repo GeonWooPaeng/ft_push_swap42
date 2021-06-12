@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/11 21:28:32 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/12 21:21:32 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,22 @@ void	ft_a_b(t_stack *a, t_stack *b, t_cnt *st_cnt, int cnt)
 {
 	int	pivot;
 	int	idx;
-
-	if (cnt == 1)
+	ft_print_lst(a); //출력부분
+	printf("\n");
+	ft_print_lst(b); //출력부분
+	ft_init_cnt(st_cnt);
+	if (cnt < 2)
 		return ;
-	pivot = ft_find_last_lst(a);
-	idx = 0;
-	while (idx++ < cnt)
+	pivot = a->next->data;
+	while (cnt-- > 0)
 	{
 		if (a->next->data > pivot)
-		{
-			ra(a);
-			st_cnt->ra_cnt += 1;
-		}
+			ra(a, st_cnt);
 		else
-		{
-			pb(a, b);
-			st_cnt->pb_cnt += 1;
-		}
+			pb(a, b, st_cnt);
 	}
-	while (idx-- > ra_cnt)
+	idx = 0;
+	while (idx++ < st_cnt->ra_cnt)
 		rra(a);
 	ft_a_b(a, b, st_cnt, st_cnt->ra_cnt);
 	ft_b_a(a, b, st_cnt, st_cnt->pb_cnt);
@@ -42,20 +39,25 @@ void	ft_a_b(t_stack *a, t_stack *b, t_cnt *st_cnt, int cnt)
 
 void	ft_b_a(t_stack *a, t_stack *b, t_cnt *st_cnt, int cnt)
 {
-	int pivot;
+	int	pivot;
 	int idx;
-	int ra_cnt;
 
-	if (cnt == 1)
+	if (cnt < 2)
 	{
-		pa(a, b);
+		pa(a, b, st_cnt);
 		return ;
 	}
-	pivot = ft_find_last_lst(b);
-	idx = 0;
-	while (idx++ < cnt)
+	pivot = b->next->data;
+	while (cnt-- > 0)
 	{
 		if (b->next->data > pivot)
-			
+			rb(b, st_cnt);
+		else
+			pa(a, b, st_cnt);
 	}
+	idx = 0;
+	while (idx++ < st_cnt->rb_cnt)
+		rrb(b);
+	ft_a_b(a, b, st_cnt, st_cnt->pa_cnt);
+	ft_b_a(a, b, st_cnt, st_cnt->rb_cnt);
 }

@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 15:07:43 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/04 12:24:02 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/12 12:28:13 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack *a, t_stack *b, t_cnt *st_cnt)
 {
 	int	bsize;
 	int	bdata;
@@ -23,10 +23,11 @@ void	pa(t_stack *a, t_stack *b)
 	bdata = b->next->data;
 	ft_pop(b);
 	ft_push_first(a, bdata);
+	st_cnt->pa_cnt += 1;
 	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	pb(t_stack *a, t_stack *b, t_cnt *st_cnt)
 {
 	int	asize;
 	int	adata;
@@ -37,5 +38,6 @@ void	pb(t_stack *a, t_stack *b)
 	adata = a->next->data;
 	ft_pop(a);
 	ft_push_first(b, adata);
+	st_cnt->pb_cnt += 1;
 	write(1, "pb\n", 3);
 }

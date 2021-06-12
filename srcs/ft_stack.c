@@ -6,22 +6,11 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/11 13:42:25 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/12 12:39:08 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-
-t_stack	*ft_stack_init(void)
-{
-	t_stack	*tmp;
-
-	tmp = (t_stack *)malloc(sizeof(t_stack));
-	tmp->prev = NULL;
-	tmp->data = 0;
-	tmp->next = NULL;
-	return (tmp);
-}
 
 void	ft_push_first(t_stack *head, int data)
 {
