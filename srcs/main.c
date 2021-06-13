@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/12 15:18:04 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/13 14:08:36 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	if (argc - 1 < 6)
 		ft_factor_five(a, b, stack_cnt);
 	else
-		ft_a_b(a, b, stack_cnt, argc - 1);
+		ft_a_b(a, b, stack_cnt, argc - 2);
 	ft_print_lst(a); //출력부분
 	printf("\n");
 	ft_print_lst(b); //출력부분
