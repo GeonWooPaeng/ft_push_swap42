@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/12 12:41:56 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/14 15:40:00 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,3 @@ long long	*ft_init_arr(char **av, int ac)
 	return (tmp_arr);
 }
 
-void		ft_init_cnt(t_cnt *st_cnt)
-{
-	st_cnt->pa_cnt = 0;
-	st_cnt->pb_cnt = 0;
-	st_cnt->ra_cnt = 0;
-	st_cnt->rb_cnt = 0;
-}

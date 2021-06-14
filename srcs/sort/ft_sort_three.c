@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:19:05 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/12 12:29:41 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/14 15:53:56 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
 
-void	ft_factor_three(t_stack *head, t_cnt *st_cnt)
+void	ft_factor_three(t_stack *head)
 {
 	t_stack	*top;
 	t_stack	*bot;
@@ -33,5 +33,5 @@ void	ft_factor_three(t_stack *head, t_cnt *st_cnt)
 		rra(head);
 	if (top->data == max_value
 	&& top->next->data == min_value)
-		ra(head, st_cnt);
+		ra(head);
 }

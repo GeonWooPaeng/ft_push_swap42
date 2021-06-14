@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wextra -Werror -Wall
-# CFLAGS += -g
+CFLAGS += -g
 NAME = push_swap
 
 DIR_H = ./includes/
@@ -16,6 +16,7 @@ SRC =	ft_lst.c					\
 		./function/ft_rotate.c		\
 		./function/ft_rrotate.c		\
 		./sort/ft_sort_utils.c		\
+		./sort/ft_sort_two.c		\
 		./sort/ft_sort_three.c		\
 		./sort/ft_sort_five.c		\
 		./sort/ft_sort_more.c		\
