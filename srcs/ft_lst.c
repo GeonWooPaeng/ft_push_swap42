@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/14 16:01:33 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 16:14:37 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_print_lst(t_stack *stack)
 {
-	while (stack)
+	int	i;
+	int size;
+
+	i = 0;
+	stack = stack->next;
+	size = ft_size(stack);
+	while (i <= size)
 	{
-		printf("%d\n", stack->data);
-		printf("address prev >>> %p\n", stack->prev);
-		printf("address >>>> %p\n", stack);
-		printf("address next >>> %p\n", stack->next);
+		printf("stack[%d]:%p: %d \n", i++, stack, stack->data);
 		stack = stack->next;
 	}
 }

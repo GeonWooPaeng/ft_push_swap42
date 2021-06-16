@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/14 15:59:56 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 16:43:03 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void    sb(t_stack *b);
 void    ss(t_stack *a, t_stack *b);
 
 //function/ft_push.c
-void    pa(t_stack *a, t_stack *b);
-void    pb(t_stack *a, t_stack *b);
+void    pa(t_stack **a, t_stack **b);
+void    pb(t_stack **a, t_stack **b);
 
 //function/ft_rotate.c
-void    ra(t_stack *a);
-void    rb(t_stack *b);
-void    rr(t_stack *a, t_stack *b);
+void    ra(t_stack **a);
+void    rb(t_stack **b);
+void    rr(t_stack **a, t_stack **b);
 
 //function/ft_rrotate.c
 void	rra(t_stack *a);
