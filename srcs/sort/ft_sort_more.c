@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 19:46:39 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 21:10:54 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,6 @@ int		ft_find_pivot(t_stack *head, int cnt)
 	}
 	ft_sort_arr(arr, cnt);
 	idx = 0;
-	printf("pivot cnt >>>>> %d\n", cnt);
-	while (idx < cnt)
-		printf("%d\n", arr[idx++]);
 	result = arr[cnt / 2];
 	free(arr);
 	return (result);
@@ -150,6 +147,6 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 		rrb(b);
 	printf("pa_cnt >>> %d\n",pa_cnt);
 	printf("rb_cnt >>> %d\n",rb_cnt);
-	// ft_a_b(a, b, pa_cnt);
+	ft_a_b(a, b, pa_cnt);
 	// ft_b_a(a, b, rb_cnt);
 }

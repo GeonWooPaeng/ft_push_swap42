@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 19:24:15 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 21:25:52 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
 	ft_make_lst(a, int_arr, argc - 1);
 	ft_print_lst(a);
 	ft_check_factor(a, b, argc - 1);
-	// ft_print_lst(a); //출력부분
-	// printf("\n");
-	// ft_print_lst(b); //출력부분
+	ft_print_lst(a); //출력부분
+	printf("\n");
+	ft_print_lst(b); //출력부분
 	ft_free_lst(a, b);
 	return (0);
 }

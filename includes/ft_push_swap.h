@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 19:09:11 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 21:22:17 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_size(t_stack *head);
 void	ft_push_last(t_stack *head, int data);
 
 //ft_init.c
-t_stack	*ft_stack_init(void);
+t_stack		*ft_stack_init(void);
 long long	*ft_init_arr(char **av, int ac);
 
 //function/ft_swap.c

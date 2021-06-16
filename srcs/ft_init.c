@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/14 15:40:00 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 21:23:38 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-t_stack	*ft_stack_init(void)
+t_stack		*ft_stack_init(void)
 {
 	t_stack	*tmp;
 

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 16:14:37 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/16 21:32:02 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_print_lst(t_stack *stack)
 	int size;
 
 	i = 0;
-	stack = stack->next;
 	size = ft_size(stack);
 	while (i <= size)
 	{
