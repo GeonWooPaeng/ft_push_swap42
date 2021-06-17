@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 21:31:14 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/17 17:35:15 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_push_first(t_stack *head, int data)
 	t_stack *new_node;
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
-
+	if (!new_node)
+		ft_error(0);
+		
 	if (head->next == NULL)
 	{
 		new_node->data = data;
@@ -67,6 +69,7 @@ void	ft_pop(t_stack *head)
 		return ;
 	else
 	{
+		head->next->prev = head;
 		head->next = del->next;
 		free(del);
 	}
@@ -89,17 +92,14 @@ void	ft_pop_last(t_stack *head)
 
 int		ft_size(t_stack *head)
 {
-	t_stack	*tmp;
 	int		size;
 
-	if (head == NULL)
-		return (0);
-	tmp = head->next;
 	size = 0;
-	while (tmp)
+	while (head->next)
 	{
-		tmp = tmp->next;
-		size++;
+
+		head = head->next;
+		size += 1;
 	}
 	return (size);
 }

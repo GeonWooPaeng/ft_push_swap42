@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 21:23:38 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/17 16:29:58 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_stack		*ft_stack_init(void)
 	t_stack	*tmp;
 
 	tmp = (t_stack *)malloc(sizeof(t_stack));
+	if (!tmp)
+		ft_error(0);
 	tmp->prev = NULL;
 	tmp->data = 0;
 	tmp->next = NULL;
@@ -43,4 +45,3 @@ long long	*ft_init_arr(char **av, int ac)
 	}
 	return (tmp_arr);
 }
-

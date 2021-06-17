@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 21:10:54 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/17 21:00:32 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int		ft_find_pivot(t_stack *head, int cnt)
 		tmp = tmp->next;
 	}
 	ft_sort_arr(arr, cnt);
-	idx = 0;
 	result = arr[cnt / 2];
 	free(arr);
 	return (result);
@@ -79,12 +78,15 @@ void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 
 	ra_cnt = 0;
 	pb_cnt = 0;
-	if (cnt == 1)
+	if (cnt <= 2)
+	{
+		ft_check_factor(a, b, cnt);
 		return ;
+	}
 	a_pivot = ft_find_pivot(a, cnt);
 	while (cnt-- > 0)
 	{
-		if (a->next->data > a_pivot)
+		if (a->next->data >= a_pivot)
 		{
 			ra(a);
 			ra_cnt += 1;
@@ -105,7 +107,6 @@ void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 	printf("ra_cnt >>> %d\n",ra_cnt);
 	printf("pb_cnt >>> %d\n",pb_cnt);
 	ft_a_b(a, b, ra_cnt);
-	printf("pb_cnt >>> %d\n",pb_cnt);
 	ft_b_a(a, b, pb_cnt);
 }
 
@@ -115,21 +116,29 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 	int idx;
 	int rb_cnt;
 	int pa_cnt;
-	printf("\n\n\nb===============================\n\n\n");
+	pa_cnt = 0;
+	rb_cnt = 0;
 	printf("b cnt >>>>> %d\n",cnt);
+	printf("\n\n\nb===============================\n\n\n");
 	ft_print_lst(a); //출력부분
 	printf("\n");
 	ft_print_lst(b);
 	printf("\n\n\nb===============================\n\n\n");
-	pa_cnt = 0;
-	rb_cnt = 0;
+	// if (cnt <= 2)
+	// {
+	// 	ft_factor_b_a(a, b, cnt, &pa_cnt);
+	// 	return ;
+	// }
+	if (cnt == 0)
+		return ;
 	if (cnt == 1)
 	{
 		pa(a, b);
 		return ;
 	}
 	b_pivot = ft_find_pivot(b, cnt);
-	while (cnt-- > 0)
+	idx = 0;
+	while (idx > cnt)
 	{
 		if (b->next->data < b_pivot)
 		{
@@ -141,6 +150,7 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 			pa(a, b);
 			pa_cnt += 1;
 		}
+		idx += 1;
 	}
 	idx = 0;
 	while (idx++ < rb_cnt)
@@ -148,5 +158,5 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 	printf("pa_cnt >>> %d\n",pa_cnt);
 	printf("rb_cnt >>> %d\n",rb_cnt);
 	ft_a_b(a, b, pa_cnt);
-	// ft_b_a(a, b, rb_cnt);
+	ft_b_a(a, b, rb_cnt);
 }

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/16 21:32:02 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/17 17:34:55 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	ft_print_lst(t_stack *stack)
 
 	i = 0;
 	size = ft_size(stack);
+	printf(">>>>>>> size: %d\n", size);
 	while (i <= size)
 	{
-		printf("stack[%d]:%p: %d \n", i++, stack, stack->data);
+		printf("stack[%d]: %p : %d : %p \n", i++, stack, stack->data, stack->next);
 		stack = stack->next;
 	}
 }
