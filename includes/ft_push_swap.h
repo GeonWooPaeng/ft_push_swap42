@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 12:15:19 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 17:40:27 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ void	ft_free_lst(t_stack *a, t_stack *b);
 void	ft_make_lst(t_stack *stack, long long *arr, int cnt);
 t_stack	*ft_find_last_lst(t_stack *stack);
 
+//ft_utils_split.c 
+void		ft_free(char **s, int idx);
+size_t	ft_cntword(char const *s, char c);
+size_t	ft_lenword(char const *s, char c);
+char		*ft_fd_strdup(const char *s, size_t lenword);
+char			**ft_split(char const *s, char c);
+
 //ft_stack.c
 void	ft_push_first(t_stack *stack, int data);
 void	ft_pop(t_stack *head);
@@ -45,7 +52,7 @@ void	ft_push_last(t_stack *head, int data);
 
 //ft_init.c
 t_stack		*ft_stack_init(void);
-long long	*ft_init_arr(char **av, int ac);
+void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size);
 
 //function/ft_swap.c
 void    sa(t_stack *a);
@@ -80,7 +87,6 @@ void	ft_factor_three(t_stack *head);
 //sort/ft_sort_five.c
 void	ft_factor_five(t_stack *a, t_stack *b);
 void	ft_m_change(t_stack *a, t_stack *b, int pb_cnt, int max_v);
-
 
 //sort/ft_sort_more.c
 void	ft_a_b(t_stack *a, t_stack *b, int cnt);
