@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 15:45:27 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 18:47:12 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:26:08 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,4 @@ void	ft_factor_two(t_stack *head)
 		sa(head);
 	else
 		return ;
-}
-
-void	ft_factor_b_a(t_stack *a, t_stack *b, int cnt, int *pa_cnt)
-{
-	if (cnt == 1)
-		pa(a, b);
-	else if (cnt == 2)
-	{
-		if (b->next->data <= b->next->next->data)
-			sb(b);
-		pa(a, b);
-		pa(a, b);
-		*pa_cnt += 2;
-	}
-	return ;
 }

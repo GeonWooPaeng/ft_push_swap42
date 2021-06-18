@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 18:53:23 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:43:29 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct		s_stack
 */
 int					ft_isspace(char c);
 int					ft_error(int ret);
-int					ft_check_arr(long long *arr);
+int					ft_check_arr(long long *arr, int arr_size);
 long long			ft_atoll(char *str);
 
 /*
@@ -81,14 +81,14 @@ void				ss(t_stack *a, t_stack *b);
 /*
 ** function/ft_push.c
 */
-void				pa(t_stack *a, t_stack *b);
-void				pb(t_stack *a, t_stack *b);
+void				pa(t_stack *a, t_stack *b, int *pa_cnt);
+void				pb(t_stack *a, t_stack *b, int *pb_cnt);
 
 /*
 ** function/ft_rotate.c
 */
-void				ra(t_stack *a);
-void				rb(t_stack *b);
+void				ra(t_stack *a, int *ra_cnt);
+void				rb(t_stack *b, int *rb_cnt);
 void				rr(t_stack *a, t_stack *b);
 
 /*
@@ -103,8 +103,8 @@ void				rrr(t_stack *a, t_stack *b);
 */
 int					ft_find_max(t_stack *head);
 int					ft_find_min(t_stack *head);
-void				ft_swap(int *arr, int idx, int l_idx);
-void				ft_sort_arr(int *arr, int cnt);
+void				ft_swap(long long *arr, int idx, int l_idx);
+void				ft_sort_arr(long long *arr, int cnt);
 int					ft_find_pivot(t_stack *head, int cnt);
 
 /*

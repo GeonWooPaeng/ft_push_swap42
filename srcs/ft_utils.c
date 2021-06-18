@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:55:52 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 17:15:44 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:33:32 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ int			ft_error(int ret)
 	return (ret);
 }
 
-int			ft_check_arr(long long *arr)
+int			ft_check_arr(long long *arr, int arr_size)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while (arr[i])
+	while (i < arr_size - 1)
 	{
 		j = i + 1;
-		while (arr[j])
+		while (j < arr_size)
 		{
 			if (arr[i] == arr[j])
 				ft_error(0);
@@ -49,7 +49,7 @@ int			ft_check_arr(long long *arr)
 			ft_error(0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 long long	ft_atoll(char *str)

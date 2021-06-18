@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:19:05 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/14 15:53:56 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:26:40 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ void	ft_factor_three(t_stack *head)
 {
 	t_stack	*top;
 	t_stack	*bot;
+	int idx;
 	int		max_value;
 	int		min_value;
 
+	idx = 0;
 	top = head->next;
 	bot = head->next->next->next;
 	max_value = ft_find_max(head);
@@ -33,5 +35,5 @@ void	ft_factor_three(t_stack *head)
 		rra(head);
 	if (top->data == max_value
 	&& top->next->data == min_value)
-		ra(head);
+		ra(head, &idx);
 }

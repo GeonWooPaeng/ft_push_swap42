@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 12:25:25 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 18:54:46 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:44:05 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_find_min(t_stack *head)
 	return (min_value);
 }
 
-void	ft_swap(int *arr, int idx, int l_idx)
+void	ft_swap(long long *arr, int idx, int l_idx)
 {
 	int	tmp;
 
@@ -51,7 +51,7 @@ void	ft_swap(int *arr, int idx, int l_idx)
 	arr[l_idx] = tmp;
 }
 
-void	ft_sort_arr(int *arr, int cnt)
+void	ft_sort_arr(long long *arr, int cnt)
 {
 	int idx;
 	int	jdx;
@@ -80,13 +80,13 @@ void	ft_sort_arr(int *arr, int cnt)
 
 int		ft_find_pivot(t_stack *head, int cnt)
 {
-	t_stack	*tmp;
-	int		*arr;
-	int		idx;
-	int		result;
+	t_stack		*tmp;
+	long long	*arr;
+	int			idx;
+	int			result;
 
 	tmp = head->next;
-	arr = (int *)malloc(sizeof(int) * cnt);
+	arr = (long long *)malloc(sizeof(long long) * cnt);
 	idx = 0;
 	while (idx < cnt)
 	{

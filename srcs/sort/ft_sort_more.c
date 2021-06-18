@@ -6,11 +6,25 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 18:52:03 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:50:11 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
+
+// void	ft_a_b_put(t_stack *a, t_stack *b, int *ra_cnt, int *pb_cnt)
+// {
+// 	if (a->next->data > a_pivot)
+// 	{
+// 		ra(a);
+// 		*ra_cnt += 1;
+// 	}
+// 	else
+// 	{
+// 		pb(a, b);
+// 		*pb_cnt += 1;
+// 	}
+// }
 
 void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 {
@@ -32,15 +46,9 @@ void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 	while (cnt-- > 0)
 	{
 		if (a->next->data > a_pivot)
-		{
-			ra(a);
-			ra_cnt += 1;
-		}
+			ra(a, &ra_cnt);
 		else
-		{
-			pb(a, b);
-			pb_cnt += 1;
-		}
+			pb(a, b, &pb_cnt);
 	}
 	idx = 0;
 	while (idx++ < ra_cnt)
@@ -58,7 +66,8 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 
 	if (cnt == 1)
 	{
-		pa(a, b);
+		pa(a, b, &pa_cnt);
+		pa_cnt -= 1;
 		return ;
 	}
 	pa_cnt = 0;
@@ -67,15 +76,10 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 	while (cnt-- > 0)
 	{
 		if (b->next->data < b_pivot)
-		{
-			rb(b);
-			rb_cnt += 1;
-		}
+			rb(b, &rb_cnt);
+
 		else
-		{
-			pa(a, b);
-			pa_cnt += 1;
-		}
+			pa(a, b, &pa_cnt);
 	}
 	idx = 0;
 	while (idx++ < rb_cnt)

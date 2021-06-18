@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 18:49:28 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 21:55:06 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,27 @@ void	ft_check_factor(t_stack *a, t_stack *b, int num)
 		ft_a_b(a, b, num);
 }
 
+void	ft_check_sort(long long *int_arr, int arr_size)
+{
+	int idx;
+
+	idx = 0;
+	while (idx < arr_size - 1)
+	{
+		if (int_arr[idx] > int_arr[idx + 1])
+			return ;
+		idx++;
+	}
+	exit(0);
+}
+
 int		main(int argc, char *argv[])
 {
 	t_stack		*a;
 	t_stack		*b;
 	long long	*int_arr;
 	int			arr_size;
+	int			idx;
 
 	if (argc < 2)
 		exit(0);
@@ -40,8 +55,11 @@ int		main(int argc, char *argv[])
 	if (!int_arr)
 		ft_error(0);
 	ft_init_arr(argv, int_arr, argc, arr_size);
-	ft_check_arr(int_arr);
+	if (!(ft_check_arr(int_arr, arr_size)))
+		ft_error(0);
 	ft_make_lst(a, int_arr, arr_size);
+	ft_sort_arr(int_arr, arr_size);
+	ft_check_sort(int_arr, arr_size);
 	ft_check_factor(a, b, arr_size);
 	printf("========= a ======");
 	ft_print_lst(a);
