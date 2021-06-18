@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/17 17:34:55 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 12:10:26 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ void	ft_make_lst(t_stack *head, long long *arr, int cnt)
 	while (idx > -1)
 	{
 		new_node = (t_stack *)malloc(sizeof(t_stack));
+		if (!new_node)
+			ft_error(0);
 		if (head->next == NULL)
 		{
 			new_node->data = arr[idx];

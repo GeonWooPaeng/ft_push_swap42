@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:56:22 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/17 17:35:15 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 13:23:33 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_push_first(t_stack *head, int data)
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		ft_error(0);
-		
 	if (head->next == NULL)
 	{
 		new_node->data = data;
@@ -43,6 +42,8 @@ void	ft_push_last(t_stack *head, int data)
 	t_stack *tmp_last;
 
 	new_node = (t_stack *)malloc(sizeof(t_stack));
+	if (!new_node)
+		ft_error(0);
 	tmp_last = ft_find_last_lst(head);
 	if (head->next == NULL)
 	{
@@ -67,9 +68,14 @@ void	ft_pop(t_stack *head)
 	del = head->next;
 	if (del == NULL)
 		return ;
+	if (del->next == NULL)
+	{
+		head->next = del->next;
+		free(del);
+	}
 	else
 	{
-		head->next->prev = head;
+		del->next->prev = head;
 		head->next = del->next;
 		free(del);
 	}
@@ -92,13 +98,14 @@ void	ft_pop_last(t_stack *head)
 
 int		ft_size(t_stack *head)
 {
+	t_stack *tmp;
 	int		size;
 
 	size = 0;
-	while (head->next)
+	tmp = head->next;
+	while (tmp)
 	{
-
-		head = head->next;
+		tmp = tmp->next;
 		size += 1;
 	}
 	return (size);

@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 15:45:27 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/17 20:58:25 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 12:25:43 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
 
-void	ft_factor_two_a(t_stack *head)
+void	ft_factor_two(t_stack *head)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -23,7 +23,6 @@ void	ft_factor_two_a(t_stack *head)
 		sa(head);
 	else
 		return ;
-	return ;
 }
 
 void	ft_factor_b_a(t_stack *a, t_stack *b, int cnt, int *pa_cnt)

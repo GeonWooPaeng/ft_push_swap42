@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/17 20:58:47 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 12:15:19 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		ft_find_max(t_stack *head);
 int		ft_find_min(t_stack *head);
 
 //sort/ft_sort_two.c
-void	ft_factor_two_a(t_stack *head);
+void	ft_factor_two(t_stack *head);
 void	ft_factor_b_a(t_stack *a, t_stack *b, int cnt, int *pa_cnt);
 
 //sort/ft_sort_three.c
