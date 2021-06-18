@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 17:43:00 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 17:44:47 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,51 +53,6 @@ int		ft_input_num(char **av, int ac)
 	return (size - 1);
 }
 
-void		ft_put_arr_over()
-{
-
-}
-
-void		ft_put_arr_under()
-{
-
-}
-
-void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size)
-{
-	int	idx;
-	int jdx;
-	int	split_idx;
-	char **split_arr;
-	int	split_size;
-	long long tmp;
-
-	idx = 1;
-	jdx = 0;
-	while (idx < ac)
-	{
-		split_arr = ft_split(av[idx], ' ');
-		split_size = ft_split_arr_size(split_arr);
-		if (split_size > 2)
-		{
-			split_idx = 0;
-			while (split_idx < split_size)
-			{	
-				tmp = ft_atoll(split_arr[split_idx++]);
-				int_arr[arr_size - 1 - jdx] = tmp;
-				jdx++;
-			}
-		}
-		else
-		{
-			tmp = ft_atoll(*split_arr);
-			int_arr[arr_size - 1 - jdx] = tmp;
-			jdx++;		
-		}
-		idx++;
-	}
-}
-
 int main(int argc, char *argv[])
 {
 	t_stack 	*a;
@@ -114,7 +69,6 @@ int main(int argc, char *argv[])
 	int_arr = (long long *)malloc(sizeof(long long) * (arr_size - 1));
 	if (!int_arr)
 		ft_error(0);
-
 	ft_init_arr(argv, int_arr, argc, arr_size);
 	ft_check_arr(int_arr);
 	ft_make_lst(a, int_arr, arr_size);

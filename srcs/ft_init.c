@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 17:38:42 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 17:44:38 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,37 @@ t_stack		*ft_stack_init(void)
 	return (tmp);
 }
 
-// long long	*ft_init_arr(char **av, int ac)
-// {
-// 	long long	*tmp_arr;
-// 	long long	tmp;
-// 	int			idx;
+void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size)
+{
+	int	idx;
+	int jdx;
+	int	split_idx;
+	char **split_arr;
+	int	split_size;
+	long long tmp;
 
-// 	tmp_arr = (long long *)malloc(sizeof(long long) * (ac - 1));
-// 	if (!tmp_arr)
-// 		ft_error(0);
-// 	idx = 0;
-// 	while (idx < ac - 1)
-// 		tmp_arr[idx++] = 0;
-// 	while (idx > 0)
-// 	{
-// 		tmp = ft_atoll(av[idx]);
-// 		tmp_arr[idx - 1] = tmp;
-// 		idx -= 1;
-// 	}
-// 	return (tmp_arr);
-// }
+	idx = 1;
+	jdx = 0;
+	while (idx < ac)
+	{
+		split_arr = ft_split(av[idx], ' ');
+		split_size = ft_split_arr_size(split_arr);
+		if (split_size > 2)
+		{
+			split_idx = 0;
+			while (split_idx < split_size)
+			{	
+				tmp = ft_atoll(split_arr[split_idx++]);
+				int_arr[arr_size - 1 - jdx] = tmp;
+				jdx++;
+			}
+		}
+		else
+		{
+			tmp = ft_atoll(*split_arr);
+			int_arr[arr_size - 1 - jdx] = tmp;
+			jdx++;		
+		}
+		idx++;
+	}
+}
