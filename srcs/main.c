@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 17:44:47 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:16:54 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,13 @@ int		ft_input_num(char **av, int ac)
 	return (size - 1);
 }
 
+
 int main(int argc, char *argv[])
 {
 	t_stack 	*a;
 	t_stack		*b;
 	long long	*int_arr;
-	char		**split_arr;
+	// char		**split_arr;
 	int			arr_size;
 
 	if (argc < 2) // 매개변수 check
@@ -69,9 +70,15 @@ int main(int argc, char *argv[])
 	int_arr = (long long *)malloc(sizeof(long long) * (arr_size - 1));
 	if (!int_arr)
 		ft_error(0);
+
 	ft_init_arr(argv, int_arr, argc, arr_size);
 	ft_check_arr(int_arr);
 	ft_make_lst(a, int_arr, arr_size);
 	ft_check_factor(a, b, arr_size);
+	printf("========= a ======");
+	ft_print_lst(a);
+	printf("=========b =======");
+	ft_print_lst(b);
+
 	return (0);
 }

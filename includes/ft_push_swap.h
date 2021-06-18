@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 17:40:27 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:16:34 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ size_t	ft_cntword(char const *s, char c);
 size_t	ft_lenword(char const *s, char c);
 char		*ft_fd_strdup(const char *s, size_t lenword);
 char			**ft_split(char const *s, char c);
+
+//ft_utils_arr.c
+int		ft_split_arr_size(char **split_arr);
+int		ft_input_num(char **av, int ac);
+void		ft_put_arr(char **av, long long **int_arr, int *idx, int *jdx, int arr_size);
 
 //ft_stack.c
 void	ft_push_first(t_stack *stack, int data);

@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 17:44:38 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:15:56 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_stack		*ft_stack_init(void)
 	return (tmp);
 }
 
+
+
 void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size)
 {
 	int	idx;
@@ -38,13 +40,14 @@ void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size)
 	jdx = 0;
 	while (idx < ac)
 	{
+		// ft_put_arr(av, int_arr, &idx, &jdx, arr_size);
 		split_arr = ft_split(av[idx], ' ');
 		split_size = ft_split_arr_size(split_arr);
 		if (split_size > 2)
 		{
 			split_idx = 0;
 			while (split_idx < split_size)
-			{	
+			{
 				tmp = ft_atoll(split_arr[split_idx++]);
 				int_arr[arr_size - 1 - jdx] = tmp;
 				jdx++;
@@ -54,7 +57,7 @@ void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size)
 		{
 			tmp = ft_atoll(*split_arr);
 			int_arr[arr_size - 1 - jdx] = tmp;
-			jdx++;		
+			jdx++;
 		}
 		idx++;
 	}

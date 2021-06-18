@@ -1,5 +1,5 @@
 CC = gcc
-# CFLAGS = -Wextra -Werror -Wall
+CFLAGS = -Wextra -Werror -Wall
 CFLAGS += -g
 NAME = push_swap
 
@@ -11,6 +11,7 @@ SRC =	ft_lst.c					\
 		ft_stack.c					\
 		ft_utils_split.c			\
 		ft_utils.c					\
+		ft_utils_arr.c				\
 		ft_init.c					\
 		./function/ft_swap.c		\
 		./function/ft_push.c		\
