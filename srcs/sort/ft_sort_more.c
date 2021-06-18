@@ -6,69 +6,11 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 13:26:57 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:52:03 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
-
-void	ft_swap(int *arr, int idx, int l_idx)
-{
-	int	tmp;
-
-	tmp = arr[idx];
-	arr[idx] = arr[l_idx];
-	arr[l_idx] = tmp;
-}
-
-void	ft_sort_arr(int *arr, int cnt)
-{
-	int idx;
-	int	jdx;
-	int least;
-	int	least_idx;
-
-	idx = 0;
-	while (idx < cnt - 1)
-	{
-		least = arr[idx];
-		least_idx = idx;
-		jdx = idx + 1;
-		while (jdx < cnt)
-		{
-			if (least > arr[jdx])
-			{
-				least = arr[jdx];
-				least_idx = jdx;
-			}
-			jdx++;
-		}
-		ft_swap(arr, idx, least_idx);
-		idx++;
-	}
-}
-
-int		ft_find_pivot(t_stack *head, int cnt)
-{
-	t_stack	*tmp;
-	int		*arr;
-	int		idx;
-	int		result;
-
-	tmp = head->next;
-	arr = (int *)malloc(sizeof(int) * cnt);
-	idx = 0;
-	while (idx < cnt)
-	{
-		arr[idx++] = tmp->data;
-		tmp = tmp->next;
-	}
-	idx = 0;
-	ft_sort_arr(arr, cnt);
-	result = arr[cnt / 2];
-	free(arr);
-	return (result);
-}
 
 void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 {

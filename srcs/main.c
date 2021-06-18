@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 18:16:54 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:49:28 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,45 +24,14 @@ void	ft_check_factor(t_stack *a, t_stack *b, int num)
 		ft_a_b(a, b, num);
 }
 
-int		ft_split_arr_size(char **split_arr)
+int		main(int argc, char *argv[])
 {
-	int idx;
-
-	idx = 0;
-	while (split_arr[idx])
-		idx++;
-	return (idx);
-}
-
-int		ft_input_num(char **av, int ac)
-{
-	int size;
-	int idx;
-	int	split_size;
-	char **split_arr;
-
-	size = 0;
-	idx = 0;
-	while (idx < ac)
-	{
-		split_arr = ft_split(av[idx], ' ');
-		split_size = ft_split_arr_size(split_arr);
-		size += split_size;
-		idx++;
-	}
-	return (size - 1);
-}
-
-
-int main(int argc, char *argv[])
-{
-	t_stack 	*a;
+	t_stack		*a;
 	t_stack		*b;
 	long long	*int_arr;
-	// char		**split_arr;
 	int			arr_size;
 
-	if (argc < 2) // 매개변수 check
+	if (argc < 2)
 		exit(0);
 	a = ft_stack_init();
 	b = ft_stack_init();
@@ -70,7 +39,6 @@ int main(int argc, char *argv[])
 	int_arr = (long long *)malloc(sizeof(long long) * (arr_size - 1));
 	if (!int_arr)
 		ft_error(0);
-
 	ft_init_arr(argv, int_arr, argc, arr_size);
 	ft_check_arr(int_arr);
 	ft_make_lst(a, int_arr, arr_size);
@@ -79,6 +47,5 @@ int main(int argc, char *argv[])
 	ft_print_lst(a);
 	printf("=========b =======");
 	ft_print_lst(b);
-
 	return (0);
 }

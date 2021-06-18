@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 12:10:26 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:46:43 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	ft_print_lst(t_stack *stack)
 	printf(">>>>>>> size: %d\n", size);
 	while (i <= size)
 	{
-		printf("stack[%d]: %p : %d : %p \n", i++, stack, stack->data, stack->next);
+		printf("stack[%d]: %p : %d : %p \n", i++,
+				stack, stack->data, stack->next);
 		stack = stack->next;
 	}
 }
@@ -69,19 +70,18 @@ void	ft_make_lst(t_stack *head, long long *arr, int cnt)
 			ft_error(0);
 		if (head->next == NULL)
 		{
-			new_node->data = arr[idx];
+			new_node->data = arr[idx--];
 			new_node->next = NULL;
 			new_node->prev = head;
 			head->next = new_node;
 		}
 		else
 		{
-			new_node->data = arr[idx];
+			new_node->data = arr[idx--];
 			new_node->next = head->next;
 			new_node->next->prev = new_node;
 			new_node->prev = head;
 			head->next = new_node;
 		}
-		idx--;
 	}
 }

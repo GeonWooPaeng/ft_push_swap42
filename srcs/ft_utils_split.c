@@ -6,13 +6,13 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 14:51:44 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 16:04:33 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/18 18:50:59 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
 
-size_t	ft_cntword(char const *s, char c)
+size_t		ft_cntword(char const *s, char c)
 {
 	size_t	cnt;
 
@@ -33,7 +33,7 @@ size_t	ft_cntword(char const *s, char c)
 	return (cnt);
 }
 
-size_t	ft_lenword(char const *s, char c)
+size_t		ft_lenword(char const *s, char c)
 {
 	size_t	lenword;
 
@@ -76,8 +76,7 @@ char		**ft_split(char const *s, char c)
 	size_t	aidx;
 
 	cntword = ft_cntword(s, c);
-	arr = (char **)malloc(sizeof(char *) * (cntword + 1));
-	if (!arr)
+	if (!(arr = (char **)malloc(sizeof(char *) * (cntword + 1))))
 		return (0);
 	aidx = 0;
 	while (aidx < cntword)
