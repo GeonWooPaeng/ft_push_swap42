@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/19 12:45:50 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/19 16:14:58 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char				**ft_split(char const *s, char c);
 */
 int					ft_split_arr_size(char **split_arr);
 int					ft_input_num(char **av, int ac);
+void				free_str(char **str);
 
 /*
 ** ft_stack.c

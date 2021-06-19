@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/19 13:20:50 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/19 15:29:35 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,16 @@ void	ft_free_lst(t_stack *a, t_stack *b)
 	{
 		nstack = a->next;
 		free(a);
+		a->next = NULL;
+		a->prev = NULL;
 		a = nstack;
 	}
 	while (b)
 	{
 		nstack = b->next;
 		free(b);
+		b->next = NULL;
+		b->prev = NULL;
 		b = nstack;
 	}
 }

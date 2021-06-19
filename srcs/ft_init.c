@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/19 13:46:42 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/19 16:14:20 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void		ft_init_arr(char **av, long long *int_arr, int ac, int arr_size)
 	{
 		split_arr = ft_split(av[idx], ' ');
 		ft_arr_put(split_arr, int_arr, &jdx, arr_size);
+		free_str(split_arr);
 		idx++;
 	}
 }
