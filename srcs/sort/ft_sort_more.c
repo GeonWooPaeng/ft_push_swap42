@@ -6,30 +6,32 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:39:24 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 21:50:11 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/19 13:24:24 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_push_swap.h"
 
-// void	ft_a_b_put(t_stack *a, t_stack *b, int *ra_cnt, int *pb_cnt)
-// {
-// 	if (a->next->data > a_pivot)
-// 	{
-// 		ra(a);
-// 		*ra_cnt += 1;
-// 	}
-// 	else
-// 	{
-// 		pb(a, b);
-// 		*pb_cnt += 1;
-// 	}
-// }
+void	ft_rr(t_stack *a, t_stack *b, int cnt, int type)
+{
+	int	idx;
+
+	idx = 0;
+	if (type == 0)
+	{
+		while (idx++ < cnt)
+			rra(a);
+	}
+	else
+	{
+		while (idx++ < cnt)
+			rrb(b);
+	}
+}
 
 void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 {
 	int	a_pivot;
-	int	idx;
 	int	pb_cnt;
 	int ra_cnt;
 
@@ -50,9 +52,7 @@ void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 		else
 			pb(a, b, &pb_cnt);
 	}
-	idx = 0;
-	while (idx++ < ra_cnt)
-		rra(a);
+	ft_rr(a, b, ra_cnt, 0);
 	ft_a_b(a, b, ra_cnt);
 	ft_b_a(a, b, pb_cnt);
 }
@@ -60,7 +60,6 @@ void	ft_a_b(t_stack *a, t_stack *b, int cnt)
 void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 {
 	int	b_pivot;
-	int idx;
 	int rb_cnt;
 	int pa_cnt;
 
@@ -77,13 +76,10 @@ void	ft_b_a(t_stack *a, t_stack *b, int cnt)
 	{
 		if (b->next->data < b_pivot)
 			rb(b, &rb_cnt);
-
 		else
 			pa(a, b, &pa_cnt);
 	}
-	idx = 0;
-	while (idx++ < rb_cnt)
-		rrb(b);
+	ft_rr(a, b, rb_cnt, 1);
 	ft_a_b(a, b, pa_cnt);
 	ft_b_a(a, b, rb_cnt);
 }

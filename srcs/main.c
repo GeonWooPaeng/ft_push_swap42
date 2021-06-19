@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 21:55:06 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/19 13:29:07 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	ft_check_sort(long long *int_arr, int arr_size)
 {
 	int idx;
 
-	idx = 0;
-	while (idx < arr_size - 1)
+	idx = arr_size - 1;
+	while (idx > 0)
 	{
-		if (int_arr[idx] > int_arr[idx + 1])
+		if (int_arr[idx] > int_arr[idx - 1])
 			return ;
-		idx++;
+		idx--;
 	}
 	exit(0);
 }
@@ -57,13 +57,8 @@ int		main(int argc, char *argv[])
 	ft_init_arr(argv, int_arr, argc, arr_size);
 	if (!(ft_check_arr(int_arr, arr_size)))
 		ft_error(0);
-	ft_make_lst(a, int_arr, arr_size);
-	ft_sort_arr(int_arr, arr_size);
 	ft_check_sort(int_arr, arr_size);
+	ft_make_lst(a, int_arr, arr_size);
 	ft_check_factor(a, b, arr_size);
-	printf("========= a ======");
-	ft_print_lst(a);
-	printf("=========b =======");
-	ft_print_lst(b);
 	return (0);
 }

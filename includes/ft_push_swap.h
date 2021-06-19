@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 18:23:49 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/18 21:43:29 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/19 12:45:50 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ void				ft_m_change(t_stack *a, t_stack *b, int pb_cnt, int max_v);
 /*
 ** sort/ft_sort_more.c
 */
+
+void				ft_rr(t_stack *a, t_stack *b, int cnt, int type);
 void				ft_a_b(t_stack *a, t_stack *b, int cnt);
 void				ft_b_a(t_stack *a, t_stack *b, int cnt);
 
