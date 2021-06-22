@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/19 15:40:28 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/22 11:29:29 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		main(int argc, char *argv[])
 	a = ft_stack_init();
 	b = ft_stack_init();
 	arr_size = ft_input_num(argv, argc);
-	int_arr = (long long *)malloc(sizeof(long long) * (arr_size - 1));
+	int_arr = (long long *)malloc(sizeof(long long) * arr_size);
 	if (!int_arr)
 		ft_error(0);
 	ft_init_arr(argv, int_arr, argc, arr_size);
@@ -61,6 +61,5 @@ int		main(int argc, char *argv[])
 	ft_make_lst(a, int_arr, arr_size);
 	ft_check_factor(a, b, arr_size);
 	ft_free_lst(a, b);
-	system("leaks push_swap");
 	return (0);
 }

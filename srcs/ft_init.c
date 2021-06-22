@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:38:13 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/19 16:14:20 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/22 11:30:39 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		ft_arr_put(char **split_arr, long long *int_arr,
 	long long	tmp;
 
 	split_size = ft_split_arr_size(split_arr);
-	if (split_size > 2)
+	if (split_size > 1)
 	{
 		split_idx = 0;
 		while (split_idx < split_size)
