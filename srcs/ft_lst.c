@@ -6,27 +6,11 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:52:17 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/19 15:29:35 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/22 12:55:40 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_push_swap.h"
-
-void	ft_print_lst(t_stack *stack)
-{
-	int	i;
-	int size;
-
-	i = 0;
-	size = ft_size(stack);
-	printf(">>>>>>> size: %d\n", size);
-	while (i <= size)
-	{
-		printf("stack[%d]: %p : %d : %p \n", i++,
-				stack, stack->data, stack->next);
-		stack = stack->next;
-	}
-}
 
 t_stack	*ft_find_last_lst(t_stack *stack)
 {

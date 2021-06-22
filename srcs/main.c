@@ -6,7 +6,7 @@
 /*   By: gpaeng <gpaeng@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 13:54:28 by gpaeng            #+#    #+#             */
-/*   Updated: 2021/06/22 11:44:56 by gpaeng           ###   ########.fr       */
+/*   Updated: 2021/06/22 13:01:36 by gpaeng           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		main(int argc, char *argv[])
 	t_stack		*b;
 	long long	*int_arr;
 	int			arr_size;
-	int			idx;
 
 	if (argc < 2)
 		exit(0);
